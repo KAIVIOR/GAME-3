@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var gameObject = GameObject()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        GateView().environmentObject(gameObject)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            PlayView()
+                .previewLayout(.fixed(width: 844, height: 390))
+           
+        }
+            
     }
 }
